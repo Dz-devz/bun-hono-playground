@@ -8,7 +8,7 @@ app.get('/', (c) => {
 }).get("/set-cookie", (c) => {
   setCookie(c,
     "cookie_name",
-    "coo",
+    "cookie_value",
     {httpOnly: true}
   )
   return c.text("done")
