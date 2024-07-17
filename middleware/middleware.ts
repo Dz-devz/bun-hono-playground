@@ -7,10 +7,9 @@ const store = new CookieStore()
 export function MiddleWare(){
   app.use('*', sessionMiddleware({
     store,
-    encryptionKey: 'password_at_least_32_characters_long',
+    encryptionKey: Bun.env.SESSION_ENCRYPTION_KEY,
     expireAfterSeconds: 900,
     cookieOptions: {
-      sameSite: 'Lax',
       path: '/',
       httpOnly: true,
     },
